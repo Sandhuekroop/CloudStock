@@ -80,7 +80,7 @@ const Sidebar = () => {
           isSidebarCollapsed ? "px-5" : "px-8"
         } `}>
          <Image 
-                       src="https://s3cloudstock.s3.ap-south-1.amazonaws.com/logo.jpg"
+                       src="https://s3cloudstock.s3.ap-south-1.amazonaws.com/logo.png"
                        alt="cloudstock-logo"
                        width={27}
                        height={27}
