@@ -79,13 +79,19 @@ const Sidebar = () => {
       <div className={`flex gap-3 justify-between md:justify-normal items-center pt-8  ${
           isSidebarCollapsed ? "px-5" : "px-8"
         } `}>
-        <div>logo</div>
+         <Image 
+                       src="https://s3cloudstock.s3.ap-south-1.amazonaws.com/logo.jpg"
+                       alt="cloudstock-logo"
+                       width={27}
+                       height={27}
+                       className="rounded w-8"
+                     />
          <h1
           className={`${
             isSidebarCollapsed ? "hidden" : "block"
           } font-extrabold text-2xl`}
         >
-          EDSTOCK
+          CLOUDSTOCK
         </h1>
 
        <button
