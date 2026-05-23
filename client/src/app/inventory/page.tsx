@@ -45,14 +45,15 @@ const Inventory = () => {
   }
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col text-gray-900 dark:text-gray-200">
       <Header name="Inventory" />
       <DataGrid
         rows={products}
         columns={columns}
+        disableRowSelectionOnClick
         getRowId={(row) => row.productId}
         checkboxSelection
-        className="bg-white shadow rounded-lg border border-gray-200 mt-5 !text-gray-700"
+        className="bg-white dark:bg-gray-950 shadow rounded-lg border border-gray-200 dark:border-gray-700 mt-5"
       />
     </div>
   );

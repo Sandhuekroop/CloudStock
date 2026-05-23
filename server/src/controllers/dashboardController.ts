@@ -52,7 +52,7 @@ export const getDashboardMetrics = async (
       purchaseSummary,
       expenseSummary,
       expenseByCategorySummary,
-    });
+    }); 
   } catch (error) {
     res.status(500).json({ message: "Error retrieving dashboard metrics" });
   }

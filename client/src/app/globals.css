@@ -1,5 +1,192 @@
 @import "tailwindcss";
 
+:root {
+  /* Save original Tailwind v4 colors in raw variables with literal values to avoid circular references in dark mode */
+  --raw-gray-50: oklch(0.985 0.002 247.839);
+  --raw-gray-100: oklch(0.967 0.003 264.542);
+  --raw-gray-200: oklch(0.928 0.006 264.531);
+  --raw-gray-300: oklch(0.872 0.01 258.338);
+  --raw-gray-400: oklch(0.707 0.022 261.325);
+  --raw-gray-500: oklch(0.551 0.027 264.364);
+  --raw-gray-600: oklch(0.446 0.03 256.802);
+  --raw-gray-700: oklch(0.373 0.034 259.733);
+  --raw-gray-800: oklch(0.278 0.033 256.848);
+  --raw-gray-900: oklch(0.21 0.034 264.665);
+  --raw-gray-950: oklch(0.13 0.028 261.692);
+
+  --raw-red-50: oklch(0.971 0.013 17.38);
+  --raw-red-100: oklch(93.65% 0.03199 17.556 / 0.186);
+  --raw-red-200: oklch(0.885 0.062 18.334);
+  --raw-red-300: oklch(0.808 0.114 19.571);
+  --raw-red-400: oklch(0.704 0.191 22.216);
+  --raw-red-500: oklch(0.637 0.237 25.331);
+  --raw-red-600: oklch(0.577 0.245 27.325);
+  --raw-red-700: oklch(0.505 0.213 27.518);
+  --raw-red-800: oklch(0.444 0.177 26.899);
+  --raw-red-900: oklch(0.396 0.141 25.723);
+
+  --raw-yellow-50: oklch(0.987 0.026 102.212);
+  --raw-yellow-100: oklch(0.973 0.071 103.193);
+  --raw-yellow-200: oklch(0.945 0.129 101.54);
+  --raw-yellow-300: oklch(0.905 0.182 98.111);
+  --raw-yellow-400: oklch(0.852 0.199 91.936);
+  --raw-yellow-500: oklch(0.795 0.184 86.047);
+  --raw-yellow-600: oklch(0.681 0.162 75.834);
+  --raw-yellow-700: oklch(0.554 0.135 66.442);
+  --raw-yellow-800: oklch(0.476 0.114 61.907);
+  --raw-yellow-900: oklch(0.421 0.095 57.708);
+
+  --raw-green-50: oklch(0.982 0.018 155.826);
+  --raw-green-100: oklch(0.962 0.044 156.743);
+  --raw-green-200: oklch(0.925 0.084 155.995);
+  --raw-green-300: oklch(0.871 0.15 154.449);
+  --raw-green-400: oklch(0.792 0.209 151.711);
+  --raw-green-500: oklch(0.723 0.219 149.579);
+  --raw-green-600: oklch(0.627 0.194 149.214);
+  --raw-green-700: oklch(0.527 0.154 150.069);
+  --raw-green-800: oklch(0.448 0.119 151.328);
+  --raw-green-900: oklch(0.393 0.095 152.535);
+
+  --raw-blue-50: oklch(0.97 0.014 254.604);
+  --raw-blue-100: oklch(0.932 0.032 255.585);
+  --raw-blue-200: oklch(0.882 0.059 254.128);
+  --raw-blue-300: oklch(0.809 0.105 251.813);
+  --raw-blue-400: oklch(0.707 0.165 254.624);
+  --raw-blue-500: oklch(0.623 0.214 259.815);
+  --raw-blue-600: oklch(0.546 0.245 262.881);
+  --raw-blue-700: oklch(0.488 0.243 264.376);
+  --raw-blue-800: oklch(0.424 0.199 265.638);
+  --raw-blue-900: oklch(0.379 0.146 265.522);
+
+  --raw-indigo-50: oklch(0.962 0.018 272.314);
+  --raw-indigo-100: oklch(0.93 0.034 272.788);
+  --raw-indigo-200: oklch(0.87 0.065 274.039);
+  --raw-indigo-300: oklch(0.785 0.115 274.713);
+  --raw-indigo-400: oklch(0.673 0.182 276.935);
+  --raw-indigo-500: oklch(0.585 0.233 277.117);
+  --raw-indigo-600: oklch(0.511 0.262 276.966);
+  --raw-indigo-700: oklch(0.457 0.24 277.023);
+  --raw-indigo-800: oklch(0.398 0.195 277.366);
+  --raw-indigo-900: oklch(0.359 0.144 278.697);
+
+  --raw-purple-50: oklch(0.977 0.014 308.299);
+  --raw-purple-100: oklch(0.946 0.033 307.174);
+  --raw-purple-200: oklch(0.902 0.063 306.703);
+  --raw-purple-300: oklch(0.827 0.119 306.383);
+  --raw-purple-400: oklch(0.714 0.203 305.504);
+  --raw-purple-500: oklch(0.627 0.265 303.9);
+  --raw-purple-600: oklch(0.558 0.288 302.321);
+  --raw-purple-700: oklch(0.496 0.265 301.924);
+  --raw-purple-800: oklch(0.438 0.218 303.724);
+  --raw-purple-900: oklch(0.381 0.176 304.987);
+
+  --raw-pink-50: oklch(0.971 0.014 343.198);
+  --raw-pink-100: oklch(0.948 0.028 342.258);
+  --raw-pink-200: oklch(0.899 0.061 343.231);
+  --raw-pink-300: oklch(0.823 0.12 346.018);
+  --raw-pink-400: oklch(0.718 0.202 349.761);
+  --raw-pink-500: oklch(0.656 0.241 354.308);
+  --raw-pink-600: oklch(0.592 0.249 0.584);
+  --raw-pink-700: oklch(0.525 0.223 3.958);
+  --raw-pink-800: oklch(0.459 0.187 3.815);
+  --raw-pink-900: oklch(0.408 0.153 2.432);
+}
+
+.dark {
+  /* Invert all shades for dark mode */
+  --color-gray-50: var(--raw-gray-900);
+  --color-gray-100: var(--raw-gray-800);
+  --color-gray-200: var(--raw-gray-700);
+  --color-gray-300: var(--raw-gray-600);
+  --color-gray-400: var(--raw-gray-500);
+  --color-gray-500: var(--raw-gray-400);
+  --color-gray-600: var(--raw-gray-300);
+  --color-gray-700: var(--raw-gray-200);
+  --color-gray-800: var(--raw-gray-100);
+  --color-gray-900: var(--raw-gray-50);
+
+  --color-red-50: var(--raw-red-900);
+  --color-red-100: var(--raw-red-800);
+  --color-red-200: var(--raw-red-700);
+  --color-red-300: var(--raw-red-600);
+  --color-red-400: var(--raw-red-500);
+  --color-red-500: var(--raw-red-400);
+  --color-red-600: var(--raw-red-300);
+  --color-red-700: var(--raw-red-200);
+  --color-red-800: var(--raw-red-100);
+  --color-red-900: var(--raw-red-50);
+
+  --color-yellow-50: var(--raw-yellow-900);
+  --color-yellow-100: var(--raw-yellow-800);
+  --color-yellow-200: var(--raw-yellow-700);
+  --color-yellow-300: var(--raw-yellow-600);
+  --color-yellow-400: var(--raw-yellow-500);
+  --color-yellow-500: var(--raw-yellow-400);
+  --color-yellow-600: var(--raw-yellow-300);
+  --color-yellow-700: var(--raw-yellow-200);
+  --color-yellow-800: var(--raw-yellow-100);
+  --color-yellow-900: var(--raw-yellow-50);
+
+  --color-green-50: var(--raw-green-900);
+  --color-green-100: var(--raw-green-800);
+  --color-green-200: var(--raw-green-700);
+  --color-green-300: var(--raw-green-600);
+  --color-green-400: var(--raw-green-500);
+  --color-green-500: var(--raw-green-400);
+  --color-green-600: var(--raw-green-300);
+  --color-green-700: var(--raw-green-200);
+  --color-green-800: var(--raw-green-100);
+  --color-green-900: var(--raw-green-50);
+
+  --color-blue-50: var(--raw-blue-900);
+  --color-blue-100: var(--raw-blue-800);
+  --color-blue-200: var(--raw-blue-700);
+  --color-blue-300: var(--raw-blue-600);
+  --color-blue-400: var(--raw-blue-500);
+  --color-blue-500: var(--raw-blue-400);
+  --color-blue-600: var(--raw-blue-300);
+  --color-blue-700: var(--raw-blue-200);
+  --color-blue-800: var(--raw-blue-100);
+  --color-blue-900: var(--raw-blue-50);
+
+  --color-indigo-50: var(--raw-indigo-900);
+  --color-indigo-100: var(--raw-indigo-800);
+  --color-indigo-200: var(--raw-indigo-700);
+  --color-indigo-300: var(--raw-indigo-600);
+  --color-indigo-400: var(--raw-indigo-500);
+  --color-indigo-500: var(--raw-indigo-400);
+  --color-indigo-600: var(--raw-indigo-300);
+  --color-indigo-700: var(--raw-indigo-200);
+  --color-indigo-800: var(--raw-indigo-100);
+  --color-indigo-900: var(--raw-indigo-50);
+
+  --color-purple-50: var(--raw-purple-900);
+  --color-purple-100: var(--raw-purple-800);
+  --color-purple-200: var(--raw-purple-700);
+  --color-purple-300: var(--raw-purple-600);
+  --color-purple-400: var(--raw-purple-500);
+  --color-purple-500: var(--raw-purple-400);
+  --color-purple-600: var(--raw-purple-300);
+  --color-purple-700: var(--raw-purple-200);
+  --color-purple-800: var(--raw-purple-100);
+  --color-purple-900: var(--raw-purple-50);
+
+  --color-pink-50: var(--raw-pink-900);
+  --color-pink-100: var(--raw-pink-800);
+  --color-pink-200: var(--raw-pink-700);
+  --color-pink-300: var(--raw-pink-600);
+  --color-pink-400: var(--raw-pink-500);
+  --color-pink-500: var(--raw-pink-400);
+  --color-pink-600: var(--raw-pink-300);
+  --color-pink-700: var(--raw-pink-200);
+  --color-pink-800: var(--raw-pink-100);
+  --color-pink-900: var(--raw-pink-50);
+
+  /* Special white/black mappings from tw-colors setup */
+  --color-white: var(--raw-gray-950);
+  --color-black: var(--raw-gray-50);
+}
+
 *,
 *::before,
 *::after {
@@ -13,8 +200,8 @@ body,
   height: 100%;
   width: 100%;
   @apply text-sm;
-  @apply bg-gray-100;
-  @apply text-gray-900;
+  @apply bg-gray-100 dark:bg-gray-900;
+  @apply text-gray-900 dark:text-gray-200;
 }
 
 @media (min-width: 768px) {
@@ -29,27 +216,127 @@ body,
   }
 }
 
+/* Dark Mode overrides for MUI DataGrid */
+.dark .MuiDataGrid-root,
+.dark .MuiDataGrid-main,
+.dark .MuiDataGrid-virtualScroller {
+  background-color: var(--color-gray-950) !important;
+  color: var(--color-gray-100) !important;
+  border-color: var(--color-gray-700) !important;
+}
+
+.dark .MuiDataGrid-headers,
+.dark .MuiDataGrid-container--top,
+.dark .MuiDataGrid-columnHeaders,
+.dark .MuiDataGrid-columnHeaderRow,
+.dark .MuiDataGrid-columnHeader {
+  background-color: var(--color-gray-900) !important;
+  color: var(--color-gray-50) !important;
+  border-color: var(--color-gray-700) !important;
+}
+
+.dark .MuiDataGrid-columnHeaderTitle {
+  color: var(--color-gray-50) !important;
+  font-weight: 700 !important;
+}
+
+.dark .MuiDataGrid-cell {
+  border-color: var(--color-gray-700) !important;
+  color: var(--color-slate-100) !important;
+}
+
+.dark .MuiDataGrid-row {
+  border-bottom-color: var(--color-gray-700) !important;
+  background-color: var(--color-gray-950) !important;
+  color: var(--color-gray-100) !important;
+}
+
+/* .dark .MuiDataGrid-row:hover {
+    background-color: var(--color-gray-800) !important;
+    color: var(--color-white) !important;
+  } */
+
+.dark .MuiDataGrid-row:hover {
+  background-color: var(--color-gray-200) !important;
+}
+
+/* .dark .MuiDataGrid-cell:hover {
+    color: var(--color-black) !important;
+  } */
+.dark .MuiDataGrid-cell:hover {
+  color: var(--color-pink-500) !important;
+
+}
+
+.dark .MuiDataGrid-row.Mui-selected {
+  background-color: var(--color-gray-800) !important;
+  color: var(--color-white) !important;
+}
+
+.dark .MuiDataGrid-row.Mui-selected:hover {
+  background-color: var(--color-gray-700) !important;
+  color: var(--color-white) !important;
+}
+
+.dark .MuiDataGrid-row.Mui-selected .MuiDataGrid-cell {
+  color: var(--color-gray-50) !important;
+}
+
+.dark .MuiDataGrid-footerContainer {
+  background-color: var(--color-gray-900) !important;
+  border-top-color: var(--color-gray-700) !important;
+  color: var(--color-gray-100) !important;
+}
+
+.dark .MuiTablePagination-root {
+  color: var(--color-gray-100) !important;
+}
+
+.dark .MuiTablePagination-select {
+  color: var(--color-gray-100) !important;
+}
+
+.dark .MuiTablePagination-selectIcon {
+  fill: var(--color-gray-100) !important;
+}
+
+.dark .MuiSvgIcon-root {
+  fill: var(--color-gray-100) !important;
+}
+
+.dark .MuiCheckbox-root {
+  color: var(--color-gray-400) !important;
+}
+
+.dark .MuiCheckbox-root.Mui-checked {
+  color: var(--color-blue-500) !important;
+}
+
+.dark .MuiDataGrid-withBorderColor {
+  border-color: var(--color-gray-700) !important;
+}
+
 /* :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff;
+    --foreground: #171717;
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-} */
+  @theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: #0a0a0a;
+      --foreground: #ededed;
+    }
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: Arial, Helvetica, sans-serif;
+  } */
