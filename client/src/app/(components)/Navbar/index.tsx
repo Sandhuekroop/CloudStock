@@ -73,7 +73,7 @@ const Navbar = () => {
                height={50}
                className="rounded-full h-full object-cover"
              />
-            <span className="font-semibold">Ekroop</span>
+            <span className="font-semibold">Sam</span>
           </div>
         </div>
         <Link href="/settings">
